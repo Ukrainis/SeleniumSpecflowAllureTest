@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using BoDi;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 
 namespace UnitTestProject1.Steps
@@ -18,6 +19,12 @@ namespace UnitTestProject1.Steps
             _scenarioContext = scenarioContext;
         }
 
+        [OneTimeSetUp]
+        public void SetupForAllure()
+        {
+            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
+        }
+
         [BeforeScenario]
         public void Setup()
         {
@@ -28,7 +35,6 @@ namespace UnitTestProject1.Steps
                 _objectContainer.RegisterInstanceAs<Driver>(_driver);
             }
             Console.WriteLine(Path.GetDirectoryName(GetType().Assembly.Location));
-            Environment.CurrentDirectory = Path.GetDirectoryName(GetType().Assembly.Location);
         }
 
         [AfterScenario]
