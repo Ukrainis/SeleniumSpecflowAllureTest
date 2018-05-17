@@ -2,7 +2,7 @@
 	Verification of the shop authentication
 
 @ChromeLocal
-@Severity:Blocker
+@blocker
 Scenario Outline: Shop login tests Chrome
 	Given I am navigated to Shop application main page
 	When I click Sign in link
