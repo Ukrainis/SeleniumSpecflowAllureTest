@@ -2,3 +2,11 @@
 .git/
 packages/
 /UnitTestProject1/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/UnitTestProject1/bin/Debug/
+!/UnitTestProject1/bin/Debug/allureConfig.json
+/UnitTestProject1/obj/Debug/UnitTestProject1.csproj.CopyComplete
+/UnitTestProject1/obj/Debug/UnitTestProject1.csproj.CoreCompileInputs.cache
+/UnitTestProject1/obj/Debug/UnitTestProject1.csproj.FileListAbsolute.txt
+/UnitTestProject1/obj/Debug/UnitTestProject1.csprojResolveAssemblyReference.cache
+/UnitTestProject1/obj/Debug/UnitTestProject1.dll
+/UnitTestProject1/obj/Debug/UnitTestProject1.pdb
