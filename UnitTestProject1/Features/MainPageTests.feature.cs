@@ -66,13 +66,13 @@ namespace UnitTestProject1.Features
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verifying title of the Home page")]
         [NUnit.Framework.CategoryAttribute("UiTest")]
-        [NUnit.Framework.CategoryAttribute("ChromeLocal")]
+        [NUnit.Framework.CategoryAttribute("Chrome")]
         [NUnit.Framework.CategoryAttribute("low")]
         public virtual void VerifyingTitleOfTheHomePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying title of the Home page", new string[] {
                         "UiTest",
-                        "ChromeLocal",
+                        "Chrome",
                         "low"});
 #line 8
 this.ScenarioSetup(scenarioInfo);
@@ -87,13 +87,13 @@ this.ScenarioSetup(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verifying shop phone number on the Home page")]
         [NUnit.Framework.CategoryAttribute("UiTest")]
-        [NUnit.Framework.CategoryAttribute("ChromeLocal")]
+        [NUnit.Framework.CategoryAttribute("Chrome")]
         [NUnit.Framework.CategoryAttribute("low")]
         public virtual void VerifyingShopPhoneNumberOnTheHomePage()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying shop phone number on the Home page", new string[] {
                         "UiTest",
-                        "ChromeLocal",
+                        "Chrome",
                         "low"});
 #line 15
 this.ScenarioSetup(scenarioInfo);
