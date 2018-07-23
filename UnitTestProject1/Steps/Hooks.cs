@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using Allure.Commons;
 using BoDi;
 using NLog;
@@ -55,12 +57,29 @@ namespace UnitTestProject1.Steps
 
                 Logger.Info("WebDriver termination.");
                 _driver.DriverTermination();
+                CloseChromeDriverProcesses();
             }
         }
 
         private bool IsUiTest()
         {
             return _scenarioContext.ScenarioInfo.Tags[0] == "UiTest";
+        }
+
+        private void CloseChromeDriverProcesses()
+        {
+            var chromeDriverProcesses = Process.GetProcesses().
+                Where(pr => pr.ProcessName == "chromedriver");
+
+            if (chromeDriverProcesses.Count() == 0)
+            {
+                return;
+            }
+
+            foreach (var process in chromeDriverProcesses)
+            {
+                process.Kill();
+            }
         }
     }
 }
