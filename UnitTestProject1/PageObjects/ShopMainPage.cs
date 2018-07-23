@@ -11,6 +11,9 @@ namespace UnitTestProject1.PageObjects
             PageFactory.InitElements(driver, this);
         }
 
+        [FindsBy(How = How.CssSelector, Using = ".shop-phone strong")]
+        public IWebElement ShopPhoneNumberLabel { get; set; }
+
         [FindsBy(How = How.Id, Using = "homepage-slider")]
         [CacheLookup]
         public IWebElement MainPageSlider { get; set; }

@@ -50,5 +50,14 @@ namespace UnitTestProject1.Steps
             titleActual.Should().BeEquivalentTo(pageTitleExpected);
         }
 
+        [Then(@"I see that shop phone number is ""(.*)""")]
+        public void ThenISeeThatShopPhoneNumberIs(string phoneNumberExpected)
+        {
+            var phoneNumberActual = shopMainPage.ShopPhoneNumberLabel.Text;
+
+            phoneNumberActual.Should().BeEquivalentTo(phoneNumberExpected);
+        }
+
+
     }
 }

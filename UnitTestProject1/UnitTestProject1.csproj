@@ -128,6 +128,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FirstTest.feature</DependentUpon>
     </Compile>
+    <Compile Include="Features\MainPageTests.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainPageTests.feature</DependentUpon>
+    </Compile>
     <Compile Include="PageObjects\ShopAuthenticationPage.cs" />
     <Compile Include="PageObjects\ShopMainPage.cs" />
     <Compile Include="Steps\Hooks.cs" />
@@ -154,6 +159,10 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Features\MainPageTests.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MainPageTests.feature.cs</LastGenOutput>
+    </None>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
