@@ -24,7 +24,8 @@ namespace UnitTestProject1.Steps
         public void GivenIAmNavigatedToShopApplication()
         {
             Console.WriteLine("Entering Shop application.");
-            _driver.WebDriver.Navigate().GoToUrl("http://automationpractice.com/index.php");
+            _driver.WebDriver.Navigate().GoToUrl(
+                System.Configuration.ConfigurationManager.AppSettings["ShopBaseUrl"]);
         }
 
         [When(@"I click Sign in link")]

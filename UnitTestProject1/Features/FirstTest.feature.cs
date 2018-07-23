@@ -65,7 +65,9 @@ namespace UnitTestProject1.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Shop login tests Chrome")]
+        [NUnit.Framework.CategoryAttribute("UiTest")]
         [NUnit.Framework.CategoryAttribute("ChromeLocal")]
+        [NUnit.Framework.CategoryAttribute("blocker")]
         [NUnit.Framework.TestCaseAttribute("uk@gmail.com", "pass", "Invalid password.", null)]
         [NUnit.Framework.TestCaseAttribute("uk@gmail.co", "123456", "Authentication failed.", null)]
         [NUnit.Framework.TestCaseAttribute("test", "pass", "Invalid email address.", null)]
@@ -74,21 +76,23 @@ namespace UnitTestProject1.Features
         public virtual void ShopLoginTestsChrome(string email, string password, string message, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "ChromeLocal"};
+                    "UiTest",
+                    "ChromeLocal",
+                    "blocker"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Shop login tests Chrome", @__tags);
-#line 5
-this.ScenarioSetup(scenarioInfo);
-#line 6
- testRunner.Given("I am navigated to Shop application main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
- testRunner.When("I click Sign in link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+this.ScenarioSetup(scenarioInfo);
 #line 8
- testRunner.And(string.Format("I login using {0} and {1}", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("I am navigated to Shop application main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
+ testRunner.When("I click Sign in link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.And(string.Format("I login using {0} and {1}", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 11
  testRunner.Then(string.Format("I should see next {0} message", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -97,5 +101,3 @@ this.ScenarioSetup(scenarioInfo);
 }
 #pragma warning restore
 #endregion
-
-

@@ -11,7 +11,7 @@ namespace UnitTestProject1.Steps
     {
         private Driver _driver;
         private readonly IObjectContainer _objectContainer;
-        private ScenarioContext _scenarioContext;
+        private readonly ScenarioContext _scenarioContext;
 
         public Hooks(IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
@@ -28,20 +28,27 @@ namespace UnitTestProject1.Steps
         [BeforeScenario]
         public void Setup()
         {
-            var browserList = _scenarioContext.ScenarioInfo.Tags;
-            foreach (var browser in browserList)
+            if (IsUiTest())
             {
-                _driver = new Driver(browser);
+                var browserName = _scenarioContext.ScenarioInfo.Tags[1];
+                _driver = new Driver(browserName);
                 _objectContainer.RegisterInstanceAs<Driver>(_driver);
             }
-            Console.WriteLine(Path.GetDirectoryName(GetType().Assembly.Location));
         }
 
         [AfterScenario]
         public void TearDown()
         {
-            Console.WriteLine("WebDriver termination.");
-            _driver.DriverTermination();
+            if (IsUiTest())
+            {
+                Console.WriteLine("WebDriver termination.");
+                _driver.DriverTermination();
+            }
+        }
+
+        private bool IsUiTest()
+        {
+            return _scenarioContext.ScenarioInfo.Tags[0] == "UiTest";
         }
     }
 }

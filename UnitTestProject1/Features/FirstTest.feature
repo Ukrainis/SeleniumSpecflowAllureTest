@@ -1,6 +1,7 @@
 ﻿Feature: ShopLoginTests Chrome
 	Verification of the shop authentication
 
+@UiTest
 @ChromeLocal
 @blocker
 Scenario Outline: Shop login tests Chrome
