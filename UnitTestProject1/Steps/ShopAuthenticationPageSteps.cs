@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using FluentAssertions;
+using NLog;
+using NUnit.Framework;
 using TechTalk.SpecFlow;
 using UnitTestProject1.PageObjects;
 using UnitTestProject1.Utils;
@@ -10,6 +12,7 @@ namespace UnitTestProject1.Steps
     {
         private Driver _driver;
         private ShopAuthenticationPage shopAuthenticationPage;
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public ShopAuthenticationPageSteps(Driver driver)
         {
@@ -28,7 +31,8 @@ namespace UnitTestProject1.Steps
         {
             shopAuthenticationPage.WarningMessageLabel.WaitForElementPresent(_driver);
             string pageMessage = shopAuthenticationPage.WarningMessageLabel.Text;
-            Assert.AreEqual(message, pageMessage);
+
+            pageMessage.Should().BeEquivalentTo(message);
         }
     }
 }

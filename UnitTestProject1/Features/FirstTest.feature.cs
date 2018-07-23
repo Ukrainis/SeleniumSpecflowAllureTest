@@ -68,7 +68,7 @@ namespace UnitTestProject1.Features
         [NUnit.Framework.CategoryAttribute("UiTest")]
         [NUnit.Framework.CategoryAttribute("ChromeLocal")]
         [NUnit.Framework.CategoryAttribute("blocker")]
-        [NUnit.Framework.TestCaseAttribute("uk@gmail.com", "pass", "Invalid password.", null)]
+        [NUnit.Framework.TestCaseAttribute("uk@gmail.com", "pass", "Invalid password", null)]
         [NUnit.Framework.TestCaseAttribute("uk@gmail.co", "123456", "Authentication failed.", null)]
         [NUnit.Framework.TestCaseAttribute("test", "pass", "Invalid email address.", null)]
         [NUnit.Framework.TestCaseAttribute("", "123456", "An email address required.", null)]
@@ -94,6 +94,27 @@ this.ScenarioSetup(scenarioInfo);
  testRunner.And(string.Format("I login using {0} and {1}", email, password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
  testRunner.Then(string.Format("I should see next {0} message", message), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verifying title of the Home page")]
+        [NUnit.Framework.CategoryAttribute("UiTest")]
+        [NUnit.Framework.CategoryAttribute("ChromeLocal")]
+        [NUnit.Framework.CategoryAttribute("low")]
+        public virtual void VerifyingTitleOfTheHomePage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying title of the Home page", new string[] {
+                        "UiTest",
+                        "ChromeLocal",
+                        "low"});
+#line 23
+this.ScenarioSetup(scenarioInfo);
+#line 24
+ testRunner.Given("I am navigated to Shop application main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 25
+ testRunner.Then("I see that page title equals to \"My Store\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

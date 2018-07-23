@@ -1,10 +1,13 @@
-﻿using OpenQA.Selenium;
+﻿using NLog;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
 namespace UnitTestProject1.PageObjects
 {
     public class ShopAuthenticationPage
     {
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+
         public ShopAuthenticationPage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
@@ -24,6 +27,7 @@ namespace UnitTestProject1.PageObjects
 
         public void LoginWithCustomCredentials(string email, string password)
         {
+            Logger.Info($"Log in using User email: {email} and password: {password}");
             LoginEmailTxt.SendKeys(email);
             LoginPasswordTxt.SendKeys(password);
             LoginBtn.Click();

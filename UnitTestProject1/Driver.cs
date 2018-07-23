@@ -2,6 +2,7 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using NLog;
 using OpenQA.Selenium.Chrome;
 
 namespace UnitTestProject1
@@ -9,6 +10,7 @@ namespace UnitTestProject1
     public class Driver
     {
         public IWebDriver WebDriver;
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public Driver(string browser)
         {
@@ -17,7 +19,7 @@ namespace UnitTestProject1
 
         private void DriverInitialization(string browserName)
         {
-            Console.WriteLine("WebDriver initizalization. Browser choosen: " + browserName);
+            Logger.Info("WebDriver initizalization. Browser choosen: " + browserName);
             switch (browserName)
             {
                 case "ChromeLocal":
@@ -36,7 +38,7 @@ namespace UnitTestProject1
 
         public void DriverTermination()
         {
-            Console.WriteLine("WebDriver termination.");
+            Logger.Info("WebDriver termination.");
             if (WebDriver != null)
             {
                 WebDriver.Quit();

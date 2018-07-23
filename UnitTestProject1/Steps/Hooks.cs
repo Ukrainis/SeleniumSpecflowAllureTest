@@ -1,8 +1,11 @@
 ﻿using System;
 using System.IO;
+using Allure.Commons;
 using BoDi;
+using NLog;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
+using UnitTestProject1.Utils;
 
 namespace UnitTestProject1.Steps
 {
@@ -12,11 +15,14 @@ namespace UnitTestProject1.Steps
         private Driver _driver;
         private readonly IObjectContainer _objectContainer;
         private readonly ScenarioContext _scenarioContext;
+        private AllureLifecycle _allureLifecycle;
+        protected static readonly Logger Logger = LogManager.GetCurrentClassLogger();
 
         public Hooks(IObjectContainer objectContainer, ScenarioContext scenarioContext)
         {
             _objectContainer = objectContainer;
             _scenarioContext = scenarioContext;
+            _allureLifecycle = AllureLifecycle.Instance;
         }
 
         [OneTimeSetUp]
@@ -41,7 +47,13 @@ namespace UnitTestProject1.Steps
         {
             if (IsUiTest())
             {
-                Console.WriteLine("WebDriver termination.");
+                if (_scenarioContext.TestError != null)
+                {
+                    var path = WebElementsUtils.MakeScreenshot(_driver);
+                    _allureLifecycle.AddAttachment(path);
+                }
+
+                Logger.Info("WebDriver termination.");
                 _driver.DriverTermination();
             }
         }

@@ -11,9 +11,16 @@ Scenario Outline: Shop login tests Chrome
 	Then I should see next <message> message
 	Examples: 
 	| email        | password | message                    |
-	| uk@gmail.com | pass     | Invalid password.          |
+	| uk@gmail.com | pass     | Invalid password          |
 	| uk@gmail.co  | 123456   | Authentication failed.     |
 	| test         | pass     | Invalid email address.     |
 	|              | 123456   | An email address required. |
 	| uk@gmail.com |          | Password is required.      |
+
+@UiTest
+@ChromeLocal
+@low
+Scenario: Verifying title of the Home page
+	Given I am navigated to Shop application main page
+	Then I see that page title equals to "My Store"
 
