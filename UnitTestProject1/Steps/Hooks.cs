@@ -57,8 +57,13 @@ namespace UnitTestProject1.Steps
 
                 Logger.Info("WebDriver termination.");
                 _driver.DriverTermination();
-                CloseChromeDriverProcesses();
             }
+        }
+
+        [AfterTestRun]
+        public static void AfterTests()
+        {
+            CloseChromeDriverProcesses();
         }
 
         private bool IsUiTest()
@@ -66,7 +71,7 @@ namespace UnitTestProject1.Steps
             return _scenarioContext.ScenarioInfo.Tags[0] == "UiTest";
         }
 
-        private void CloseChromeDriverProcesses()
+        private static void CloseChromeDriverProcesses()
         {
             var chromeDriverProcesses = Process.GetProcesses().
                 Where(pr => pr.ProcessName == "chromedriver");
