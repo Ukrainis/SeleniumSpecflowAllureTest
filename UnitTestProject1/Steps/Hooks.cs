@@ -60,11 +60,11 @@ namespace UnitTestProject1.Steps
             }
         }
 
-        [AfterTestRun]
-        public static void AfterTests()
-        {
-            CloseChromeDriverProcesses();
-        }
+        //[AfterTestRun]
+        //public static void AfterTests()
+        //{
+        //    CloseChromeDriverProcesses();
+        //}
 
         private bool IsUiTest()
         {
