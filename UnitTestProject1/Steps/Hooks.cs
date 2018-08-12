@@ -58,13 +58,25 @@ namespace UnitTestProject1.Steps
                 Logger.Info("WebDriver termination.");
                 _driver.DriverTermination();
             }
+
+            AllureHackForScenarioOutlineTests();
         }
 
-        //[AfterTestRun]
-        //public static void AfterTests()
-        //{
-        //    CloseChromeDriverProcesses();
-        //}
+        private void AllureHackForScenarioOutlineTests()
+        {
+            _scenarioContext.TryGetValue(out TestResult testresult);
+            _allureLifecycle.UpdateTestCase(testresult.uuid, tc =>
+            {
+                tc.name = _scenarioContext.ScenarioInfo.Title;
+                tc.historyId = Guid.NewGuid().ToString();
+            });
+        }
+
+        [AfterTestRun]
+        public static void AfterTests()
+        {
+            CloseChromeDriverProcesses();
+        }
 
         private bool IsUiTest()
         {
