@@ -1,8 +1,7 @@
 .vs/
 .git/
 packages/
-/UnitTestProject1/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-/UnitTestProject1/bin/Debug/
-!/UnitTestProject1/bin/Debug/allureConfig.json
-/UnitTestProject1/obj/
+/TestAutomationSolution/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/TestAutomationSolution/bin/Debug/
+/TestAutomationSolution/obj/
 allure-results/
