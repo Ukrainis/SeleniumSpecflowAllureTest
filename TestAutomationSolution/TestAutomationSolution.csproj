@@ -47,8 +47,8 @@
     <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
       <HintPath>..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
     </Reference>
-    <Reference Include="FluentAssertions, Version=5.4.2.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentAssertions.5.4.2\lib\net45\FluentAssertions.dll</HintPath>
+    <Reference Include="FluentAssertions, Version=5.5.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentAssertions.5.5.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Configuration, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
@@ -82,7 +82,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.5.7\lib\net45\NLog.dll</HintPath>
+      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
@@ -177,9 +177,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.38.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
     <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.38.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.38.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
   <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>
