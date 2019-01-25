@@ -24,14 +24,14 @@ namespace TestAutomationSolution.Features
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "MainPageTests.feature"
+#line 1 "BaseTest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Main Page Tests", "\tVerification of the page tite\r\n\tVerification of the shop phone number", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Main Page Tests", "\tVerification of the page title", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,45 +70,19 @@ namespace TestAutomationSolution.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verifying title of the Home page")]
-        [NUnit.Framework.CategoryAttribute("UiTest")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("low")]
-        public virtual void VerifyingTitleOfTheHomePage()
+        [NUnit.Framework.DescriptionAttribute("Verifying title of the Home page test")]
+        public virtual void VerifyingTitleOfTheHomePageTest()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying title of the Home page", null, new string[] {
-                        "UiTest",
-                        "Chrome",
-                        "low"});
-#line 8
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying title of the Home page test", null, ((string[])(null)));
+#line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 9
- testRunner.Given("I am navigated to Shop application main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 10
- testRunner.Then("I see that page title equals to \"My Store\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line hidden
-            this.ScenarioCleanup();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verifying shop phone number on the Home page")]
-        [NUnit.Framework.CategoryAttribute("UiTest")]
-        [NUnit.Framework.CategoryAttribute("Chrome")]
-        [NUnit.Framework.CategoryAttribute("low")]
-        public virtual void VerifyingShopPhoneNumberOnTheHomePage()
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verifying shop phone number on the Home page", null, new string[] {
-                        "UiTest",
-                        "Chrome",
-                        "low"});
-#line 15
-this.ScenarioInitialize(scenarioInfo);
-            this.ScenarioStart();
-#line 16
- testRunner.Given("I am navigated to Shop application main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 17
- testRunner.Then("I see that shop phone number is \"0123-456-787\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 5
+ testRunner.Given("I am navigated to Google page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 6
+ testRunner.When("I am redirected to Google main page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 7
+ testRunner.Then("I see that page title equals to Google", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

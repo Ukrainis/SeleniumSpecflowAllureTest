@@ -38,15 +38,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Allure.Commons, Version=2.4.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Allure.Commons.2.4.1.1\lib\net45\Allure.Commons.dll</HintPath>
-    </Reference>
-    <Reference Include="Allure.SpecFlowPlugin, Version=2.4.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.Allure.2.4.1.1\lib\net45\Allure.SpecFlowPlugin.dll</HintPath>
-    </Reference>
-    <Reference Include="CsvHelper, Version=7.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
-      <HintPath>..\packages\CsvHelper.7.1.1\lib\net45\CsvHelper.dll</HintPath>
-    </Reference>
     <Reference Include="FluentAssertions, Version=5.5.0.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentAssertions.5.5.0\lib\net45\FluentAssertions.dll</HintPath>
     </Reference>
@@ -75,14 +66,8 @@
     <Reference Include="Microsoft.Extensions.Primitives, Version=2.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Primitives.2.0.0\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
     </Reference>
-    <Reference Include="MimeTypesMap, Version=1.0.3.0, Culture=neutral, PublicKeyToken=1b320cc08ad5aa89, processorArchitecture=MSIL">
-      <HintPath>..\packages\MimeTypesMap.1.0.3\lib\net45\MimeTypesMap.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.5.11\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework, Version=3.9.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.9.0\lib\net45\nunit.framework.dll</HintPath>
@@ -108,7 +93,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="TechTalk.SpecFlow, Version=2.4.0.0, Culture=neutral, PublicKeyToken=0778194805d6db41, processorArchitecture=MSIL">
-      <HintPath>..\packages\SpecFlow.2.4.0\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+      <HintPath>..\packages\SpecFlow.2.4.1\lib\net45\TechTalk.SpecFlow.dll</HintPath>
     </Reference>
     <Reference Include="WebDriver, Version=3.9.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.9.1\lib\net45\WebDriver.dll</HintPath>
@@ -119,55 +104,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Driver.cs" />
-    <Compile Include="Features\FirstApiTest.feature.cs">
+    <Compile Include="Features\BaseTest.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>FirstApiTest.feature</DependentUpon>
+      <DependentUpon>BaseTest.feature</DependentUpon>
     </Compile>
-    <Compile Include="Features\FirstTest.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FirstTest.feature</DependentUpon>
-    </Compile>
-    <Compile Include="Features\MainPageTests.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainPageTests.feature</DependentUpon>
-    </Compile>
-    <Compile Include="PageObjects\ShopAuthenticationPage.cs" />
-    <Compile Include="PageObjects\ShopMainPage.cs" />
+    <Compile Include="PageObjects\GoogleMainPage.cs" />
     <Compile Include="Steps\Hooks.cs" />
-    <Compile Include="Steps\HttpClientUtlsSteps.cs" />
-    <Compile Include="Steps\ShopAuthenticationPageSteps.cs" />
-    <Compile Include="Steps\ShopMainPageSteps.cs" />
+    <Compile Include="Steps\GoogleMainPageSteps.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\HttpClientUtils.cs" />
     <Compile Include="Utils\WebElementsUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="allureConfig.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Features\FirstApiTest.feature">
+    <None Include="Features\BaseTest.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FirstApiTest.feature.cs</LastGenOutput>
-    </None>
-    <None Include="Features\FirstTest.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>FirstTest.feature.cs</LastGenOutput>
-    </None>
-    <Content Include="NLog.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Features\MainPageTests.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>MainPageTests.feature.cs</LastGenOutput>
-    </None>
-    <None Include="NLog.xsd">
-      <SubType>Designer</SubType>
+      <LastGenOutput>BaseTest.feature.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
@@ -177,9 +132,9 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.0\build\SpecFlow.targets'))" />
-    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
+    <Error Condition="!Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\SpecFlow.2.4.1\build\SpecFlow.targets'))" />
+    <Error Condition="!Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets'))" />
   </Target>
-  <Import Project="..\packages\SpecFlow.2.4.0\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.0\build\SpecFlow.targets')" />
-  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.43.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
+  <Import Project="..\packages\SpecFlow.2.4.1\build\SpecFlow.targets" Condition="Exists('..\packages\SpecFlow.2.4.1\build\SpecFlow.targets')" />
+  <Import Project="..\packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets" Condition="Exists('..\packages\Selenium.WebDriver.ChromeDriver.2.45.0\build\Selenium.WebDriver.ChromeDriver.targets')" />
 </Project>
