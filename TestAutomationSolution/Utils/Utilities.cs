@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace TestAutomationSolution.Utils
 {
-    class Utilities
+    public class Utilities
     {
         public static string MakeScreenshot(Driver driver, string testName = "screen")
         {
