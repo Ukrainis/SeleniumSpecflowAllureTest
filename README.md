@@ -1,3 +1,3 @@
 # SpecFlow Brownbag
 
-Test framework, which includes: C#+Selenium WebDriver+SpecFlow+NUnit3
+Test framework, which includes: C# + Selenium WebDriver + SpecFlow + NUnit3.
