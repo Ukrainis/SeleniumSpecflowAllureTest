@@ -1,3 +1,3 @@
-# SeleniumSpecflowAllureTest
+# SpecFlow Brownbag
 
-Test framework, which includes: C#+Selenium WebDriver+SpecFlow+NUnit3+Specflow.Allure reporting tool.
+Test framework, which includes: C#+Selenium WebDriver+SpecFlow+NUnit3
