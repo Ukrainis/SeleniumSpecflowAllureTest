@@ -2,9 +2,10 @@
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using OpenQA.Selenium.Chrome;
 
-namespace TestAutomationSolution
+namespace TestAutomationSolution.Utils
 {
     public class Driver
     {
@@ -25,8 +26,14 @@ namespace TestAutomationSolution
                     WebDriver.Manage().Window.Maximize();
                     break;
                 default:
-                    throw new KeyNotFoundException("Wrong Browser name. Please choose correct.");
+                    throw new KeyNotFoundException($"Wrong Browser name: {browserName}. Please choose correct.");
             }
+        }
+
+        public WebDriverWait GetNewWebDriverWait()
+        {
+            return new WebDriverWait(WebDriver, 
+                TimeSpan.FromSeconds(double.Parse(ConfigurationManager.AppSettings["explicitTimeout"])));
         }
 
         public void DriverTermination()

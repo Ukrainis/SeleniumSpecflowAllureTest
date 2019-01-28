@@ -8,7 +8,7 @@ namespace TestAutomationSolution.Utils
 {
     public static class Extensions
     {
-        private static TimeSpan timeout = TimeSpan.FromSeconds(Double.Parse(ConfigurationManager.AppSettings["explicitTimeout"]));
+        private static TimeSpan timeout = TimeSpan.FromSeconds(double.Parse(ConfigurationManager.AppSettings["explicitTimeout"]));
 
         public static void WaitForToBeVisible(this IWebElement element, string errorMessage)
         {
@@ -28,7 +28,7 @@ namespace TestAutomationSolution.Utils
 
         public static void WaitForTitleToBe(this Driver driver, string title)
         {
-            WebDriverWait wait = new WebDriverWait(driver.WebDriver, timeout);
+            var wait = driver.GetNewWebDriverWait();
             try
             {
                 wait.Until(ExpectedConditions.TitleIs(title));
