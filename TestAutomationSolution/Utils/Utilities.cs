@@ -1,18 +1,11 @@
-﻿using System.IO;
+﻿using OpenQA.Selenium;
+using System.IO;
 using System.Reflection;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
 
 namespace TestAutomationSolution.Utils
 {
-    public static class WebElementsUtils
+    public class Utilities
     {
-        public static void WaitForElementPresent (this IWebElement element, Driver _driver)
-        {
-            WebDriverWait wait = _driver.MakeWebDriverWait();
-            wait.Until(driver => element.Displayed);
-        }
-
         public static string MakeScreenshot(Driver driver, string testName = "screen")
         {
             string projectPath = Path.GetDirectoryName(GetTestAssemblyFolder());

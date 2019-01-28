@@ -1,7 +1,4 @@
-.vs/
-.git/
-packages/
-/TestAutomationSolution/obj/Debug/DesignTimeResolveAssemblyReferences.cache
-/TestAutomationSolution/bin/Debug/
+.vs
+/packages/
 /TestAutomationSolution/obj/
-allure-results/
+/TestAutomationSolution/bin/

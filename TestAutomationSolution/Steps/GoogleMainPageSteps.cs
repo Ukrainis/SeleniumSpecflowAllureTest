@@ -26,7 +26,7 @@ namespace TestAutomationSolution.Steps
         [When(@"I am redirected to Google main page")]
         public void ThenIAmRedirectedToShopApplicationMainPage()
         {
-            shopMainPage.SearchField.WaitForElementPresent(_driver);
+            shopMainPage.SearchField.WaitForToBeVisible("Search Field");
         }
 
         [Then(@"I see that page title equals to (.*)")]

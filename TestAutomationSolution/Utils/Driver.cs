@@ -29,11 +29,6 @@ namespace TestAutomationSolution
             }
         }
 
-        public WebDriverWait MakeWebDriverWait()
-        {
-            return new WebDriverWait(WebDriver, TimeSpan.FromMinutes(2));
-        }
-
         public void DriverTermination()
         {
             Console.WriteLine("WebDriver termination.");

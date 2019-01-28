@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using BoDi;
-using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TestAutomationSolution.Utils;
 
@@ -34,7 +33,7 @@ namespace TestAutomationSolution.Steps
         {
             if (_scenarioContext.TestError != null)
                 {
-                    WebElementsUtils.MakeScreenshot(_driver);
+                Utilities.MakeScreenshot(_driver);
                 }
 
             _driver.DriverTermination();
